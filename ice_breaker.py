@@ -25,6 +25,6 @@ if __name__ == ("__main__"):
 
     chain = LLMChain(llm=llm, prompt=summary_prompt_template)
 
-    res = chain.invoke(information=linkedin_data)
+    res = chain.run(information=linkedin_data)
 
     print(res)
