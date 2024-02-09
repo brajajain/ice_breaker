@@ -22,11 +22,20 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):
             toret = res["answer_box"]["answer"]
         elif "answer_box" in res.keys() and "snippet" in res["answer_box"].keys():
             toret = res["answer_box"]["snippet"]
-        elif "answer_box" in res.keys() and "snippet_highlighted_words" in res["answer_box"].keys():
+        elif (
+            "answer_box" in res.keys()
+            and "snippet_highlighted_words" in res["answer_box"].keys()
+        ):
             toret = res["answer_box"]["snippet_highlighted_words"][0]
-        elif "sports_results" in res.keys() and "game_spotlight" in res["sports_results"].keys():
+        elif (
+            "sports_results" in res.keys()
+            and "game_spotlight" in res["sports_results"].keys()
+        ):
             toret = res["sports_results"]["game_spotlight"]
-        elif "knowledge_graph" in res.keys() and "description" in res["knowledge_graph"].keys():
+        elif (
+            "knowledge_graph" in res.keys()
+            and "description" in res["knowledge_graph"].keys()
+        ):
             toret = res["knowledge_graph"]["description"]
         elif "snippet" in res["organic_results"][0].keys():
             toret = res["organic_results"][0]["link"]

@@ -29,10 +29,14 @@ def lookup(name: str) -> str:
     Given the full name of a person {name_of_person}, I want you to get me a URL to the their LinkedIn profile page. 
         Your final answer should only contain a URL.
     """
-    prompt_template = PromptTemplate(input_variables=["name_of_person"], template=summary_template)
+    prompt_template = PromptTemplate(
+        input_variables=["name_of_person"], template=summary_template
+    )
 
     result = agent.invoke(prompt_template.format(name_of_person=name))
-    
-    linkedin_profile_url = result.get('output', '').strip().replace('<', '').replace('>', '')
-    
+
+    linkedin_profile_url = (
+        result.get("output", "").strip().replace("<", "").replace(">", "")
+    )
+
     return linkedin_profile_url
