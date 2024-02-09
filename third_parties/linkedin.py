@@ -1,5 +1,7 @@
 import requests
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 def scrape_linkedin_profiles(linkedin_profile_url: str):
     """Scrape information from LinkedIn profiles,
@@ -8,7 +10,25 @@ def scrape_linkedin_profiles(linkedin_profile_url: str):
     Args:
         linkedin_profile_url (str): URL of the linkedin profile.
     """
-    data = requests.get(linkedin_profile_url).json()
+    api_key = os.environ.get("PROXYCURL_API_KEY")
+    headers = {"Authorization": "Bearer " + api_key}
+    api_endpoint = "https://nubela.co/proxycurl/api/v2/linkedin"
+
+    params = {
+    "linkedin_profile_url": linkedin_profile_url,
+    "extra": "include",
+    "github_profile_id": "include",
+    "facebook_profile_id": "include",
+    "twitter_profile_id": "include",
+    "personal_contact_number": "include",
+    "personal_email": "include",
+    "inferred_salary": "include",
+    "skills": "include",
+    "use_cache": "if-present",
+    "fallback_to_cache": "on-error",
+    }
+    
+    data = requests.get(api_endpoint, params=params, headers=headers).json()
 
     data = {
         k: v for k, v in data.items() if v not in ([], "", None) and k not in ["people_also_view", "certifications"]

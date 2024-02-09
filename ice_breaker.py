@@ -9,8 +9,7 @@ import os
 if __name__ == ("__main__"):
     load_dotenv()
 
-    linkedin_profile_url = linkedin_lookup_agent(name="Eden Marco Udemy")
-
+    linkedin_profile_url = linkedin_lookup_agent(name="Chris Hilsenbeck")
     linkedin_data = scrape_linkedin_profiles(linkedin_profile_url)
 
     summary_template = """
@@ -21,10 +20,10 @@ if __name__ == ("__main__"):
 
     summary_prompt_template = PromptTemplate(input_variables=["information"], template=summary_template)
 
-    llm = ChatOllama(temperature=0, model="llama2")
+    llm = ChatOllama(temperature=0, model="mistral")
 
     chain = LLMChain(llm=llm, prompt=summary_prompt_template)
 
-    res = chain.invoke(information=linkedin_data)
+    res = chain.run(information=linkedin_data)
 
     print(res)
