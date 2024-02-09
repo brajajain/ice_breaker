@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3329deb3d0605266b22b7dffeb9d4012ec287c2d2f3c4c3cf66344128682b356"
+            "sha256": "4f1828bb8e503b8b8f7a091ae6a5463094990a549945b041e26ca2b354a77a50"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -362,6 +362,14 @@
             "markers": "python_version >= '3.8'",
             "version": "==1.4.1"
         },
+        "google-search-results": {
+            "hashes": [
+                "sha256:603a30ecae2af8e600b22635757a6df275dad4b934f975e67878ccd640b78245"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.5'",
+            "version": "==2.4.2"
+        },
         "greenlet": {
             "hashes": [
                 "sha256:01bc7ea167cf943b4c802068e178bbf70ae2e8c080467070d01bfa02f337ee67",
@@ -452,12 +460,12 @@
         },
         "langchain": {
             "hashes": [
-                "sha256:4614118d4a95b2e7ba3611a0b6b21707a259a21652a04fbe3c31205bcf3fcd50",
-                "sha256:69603a5bb21b044ddea69d38131dbbf47475afdf79728644faa67d1ad325d652"
+                "sha256:925e180fd1ae53b7085e46b3cdc9db04c24ddc6f4ac08f171eea29498d99603a",
+                "sha256:a885e16c10b9ed11f312eaa6570bc48d27305362b26f6c235cafdcc794e26e71"
             ],
             "index": "pypi",
             "markers": "python_version < '4.0' and python_full_version >= '3.8.1'",
-            "version": "==0.1.5"
+            "version": "==0.1.6"
         },
         "langchain-community": {
             "hashes": [
@@ -469,11 +477,11 @@
         },
         "langchain-core": {
             "hashes": [
-                "sha256:9dd1cedc5a3a6081136352e9403d1a87befbab4d36d6ee1877b2e639e85f15ed",
-                "sha256:b5625901d38121aa449ef73446605032ddd31ac2787be1428c52e9c793ef8229"
+                "sha256:d1263c2707ce18bb13654c88f891e53f39edec9b11ff7d0d0f23fd920927b2d6",
+                "sha256:deac12b3e42a08bbbaa2acf83d5f8dd2d5513256d8daf0e853e9d68ff4c99d79"
             ],
             "markers": "python_version < '4.0' and python_full_version >= '3.8.1'",
-            "version": "==0.1.21"
+            "version": "==0.1.22"
         },
         "langsmith": {
             "hashes": [
